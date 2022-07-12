@@ -33,7 +33,8 @@ namespace AbbyWeb.Pages.Categories
             if (ModelState.IsValid) {
 
                 _db.Category.Update(Category);
-                await _db.SaveChangesAsync(); 
+                await _db.SaveChangesAsync();
+                TempData["success"] = "Category updated successfully";
                 return RedirectToPage("Index");
             }
             return Page();
